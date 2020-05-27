@@ -22,7 +22,7 @@ class Solution:
         return ret
 
     """
-        DFS
+        Recursive solution
         Reference: 
         https://leetcode.com/problems/permutations/discuss/18296/Simple-Python-solution-(DFS).
         
