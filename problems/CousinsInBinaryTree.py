@@ -1,7 +1,7 @@
 from entities import TreeNode
 
 class Solution:
-    def isCousinsDFS1(self, root: TreeNode, x: int, y: int) -> bool:
+    def isCousins_dfs1(self, root: TreeNode, x: int, y: int) -> bool:
         self.x_depth, self.y_depth = 0, 0
         self.x_parent, self.y_parent = None, None
 
@@ -34,7 +34,7 @@ class Solution:
            return true and the current node is not their immediate parent, then Node x and Node y are cousins. 
            Thus, isCousin is set to value true.
     """
-    def isConsinsDFS2(self, root: TreeNode, x: int, y: int) -> bool:
+    def isConsins_dfs2(self, root: TreeNode, x: int, y: int) -> bool:
         # To save the depth of the first node.
         self.recorded_depth = None
         self.is_cousin = False
