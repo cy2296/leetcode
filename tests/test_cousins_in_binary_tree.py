@@ -13,5 +13,4 @@ test_data = [
 def test_cousins_in_binary_tree_dfs(l, x, y, expected):
     root = list_to_binary_tree(l)
     sol = Solution()
-    assert sol.isCousinsDFS1(root, x, y) == expected
-    print("PASS Cousins in Binary Tree")
+    assert sol.isCousins_dfs1(root, x, y) == expected
