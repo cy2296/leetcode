@@ -2,7 +2,7 @@ class Solution:
     """
         my solution: DFS
         Time: O(n*n!)
-        Space: O(n2)
+        Space: ?
     """
     def permute_dfs1(self, nums):
         def dfs(current, num_set):
