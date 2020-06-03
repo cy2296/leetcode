@@ -47,6 +47,25 @@ class Solution:
         return lo if nums[lo] == target else -1
 
     """
+        Iteractive version 3
+        
+        lo <= hi, and check: 
+            nums[mid] == target 
+        in the while loop        
+    """
+    def search_iter3(self, nums: List[int], target: int) -> int:
+        lo, hi = 0, len(nums)-1
+        while lo <= hi:
+            mid = lo + (hi-lo)//2
+            if nums[mid] == target:
+                return mid
+            elif nums[mid] < target:
+                lo = mid+1
+            else:
+                hi = mid-1
+        return -1
+
+    """
         Recursive  
     """
     def search_dfs(self, nums: List[int], target: int) -> int:
