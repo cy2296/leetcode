@@ -4,6 +4,8 @@ from entities import TreeNode
 class Solution:
     """
         Iterative Solution:
+        Time: O(n)
+        Space: O(n)
 
         Preorder (Root, left, Right): 12453
 
@@ -52,3 +54,12 @@ class Solution:
         ret = []
         dfs(root)
         return ret
+
+    """
+        Further reference: 
+        9 solutions: 
+        Morris Traversal:
+        Time: O(n)
+        Space: O(1)
+        https://github.com/liuyubobobo/Play-Leetcode/blob/master/0145-Binary-Tree-Postorder-Traversal/java-0145/src/Solution9.java
+    """
