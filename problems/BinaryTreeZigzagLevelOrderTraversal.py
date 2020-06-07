@@ -30,7 +30,11 @@ class Solution:
 
         return ret
 
-
+    """
+        DFS Solution
+        Time: O(N)
+        Space: O(N)
+    """
     def zigzagLevelOrder_dfs(self, root: TreeNode) -> List[List[int]]:
         def dfs(cur, level):
             if not cur:

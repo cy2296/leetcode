@@ -10,17 +10,11 @@ test_data = [
 
 
 @pytest.mark.parametrize("root, expected", test_data)
-def test_binary_tree_zigzag_level_order_traversal_bfs1(root, expected):
+def test_binary_tree_zigzag_level_order_traversal_bfs(root, expected):
     root = list_to_binary_tree(root)
     sol = Solution()
-    assert sol.zigzagLevelOrder_bfs1(root) == expected
+    assert sol.zigzagLevelOrder(root) == expected
 
-
-@pytest.mark.parametrize("root, expected", test_data)
-def test_binary_tree_zigzag_level_order_traversal_bfs2(root, expected):
-    root = list_to_binary_tree(root)
-    sol = Solution()
-    assert sol.zigzagLevelOrder_bfs2(root) == expected
 
 @pytest.mark.parametrize("root, expected", test_data)
 def test_binary_tree_zigzag_level_order_traversal_dfs(root, expected):
