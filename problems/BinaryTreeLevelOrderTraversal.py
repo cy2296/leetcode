@@ -12,16 +12,16 @@ class Solution:
         level = [root] if root else []
 
         while level:
-            res = []  # current level result
-            queue = []  # next level nodes
+            cur = []  # current level result
+            nxt = []  # next level nodes
             for node in level:
-                res.append(node.val)
+                cur.append(node.val)
                 if node.left:
-                    queue.append(node.left)
+                    nxt.append(node.left)
                 if node.right:
-                    queue.append(node.right)
-            ret.append(res)
-            level = queue
+                    nxt.append(node.right)
+            ret.append(cur)
+            level = nxt
         return ret
 
     """
@@ -42,14 +42,17 @@ class Solution:
             |__dfs(root=7, level=2), ret: [[3],[9,20],[15]] -> [[3],[9,20],[15,7]]
     """
     def levelOrder_dfs(self, root: TreeNode) -> List[List[int]]:
-        def dfs(root, level):
-            if not root:
+        def dfs(cur, level):
+            if not cur:
                 return
+
             if len(ret) == level:
                 ret.append([])
-            ret[level].append(root.val)
-            dfs(root.left, level+1)
-            dfs(root.right, level+1)
+
+            ret[level].append(cur.val)
+
+            dfs(cur.left, level+1)
+            dfs(cur.right, level+1)
 
         ret = []
         dfs(root, 0)
