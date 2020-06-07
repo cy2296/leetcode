@@ -23,14 +23,15 @@ def list_to_binary_tree(l: List[int]):
 
         # Take the next two nodes from the linked list
         # Add them as children of the current parent node
-        left = TreeNode(head.val)
-        q.append(left)
+        if head.val is not None:
+            left = TreeNode(head.val)
+            q.append(left)
         head = head.next
 
-        if head:
+        if head.val is not None:
             right = TreeNode(head.val)
             q.append(right)
-            head = head.next
+        head = head.next
 
         parent.left = left
         parent.right = right
