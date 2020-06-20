@@ -82,7 +82,7 @@ class Solution:
         return memo[0] == Index.good
 
     """
-        Greedy: 
+        Greedy (backward): 
         The perfect Solution! 
         Time: O(N)
         Space: O(1)
@@ -95,3 +95,19 @@ class Solution:
                 last_pos = i
 
         return last_pos == 0
+
+    """
+        Greedy (forward)
+        Time: O(N)
+        Space: O(1)
+    """
+    def canJump5(self, nums) -> bool:
+        furthest = nums[0]
+
+        for i in range(1, len(nums)):
+            if furthest < i:
+                return False
+            if i + nums[i] > furthest:
+                furthest = i + nums[i]
+
+        return True
