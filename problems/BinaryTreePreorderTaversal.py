@@ -27,7 +27,7 @@ class Solution:
             |__ root: ret=[1,2,4,5,3], stack=[3], root=null
             |__ stack: ret=[1,2,4,5,3], stack=[], root=null
     """
-    def preorderTraversal(self, root: TreeNode) -> List[int]:
+    def preorderTraversal_iter1(self, root: TreeNode) -> List[int]:
         ret = []
         stack = []
         while root or stack:
@@ -41,7 +41,35 @@ class Solution:
         return ret
 
     """
-        Recursive
+        ret=[], s=[1]
+        ret=[1], s=[3,2]
+        ret=[1,2] s=[3,5,4]
+        ret=[1,2,4] s=[3,5]
+        ret=[1,2,4,5], s=[3]
+        ret=[1,2,4,5,3], s=[]   
+    """
+    def preorderTraversal_iter2(self, root: TreeNode) -> List[int]:
+        ret = []
+        stack = []
+        if root:
+            stack.append(root)
+
+        while stack:
+            cur = stack.pop()
+            ret.append(cur.val)
+            if cur.right:
+                stack.append(cur.right)
+            if cur.left:
+                stack.append(cur.left)
+
+        return ret
+
+    """
+        Recursive:
+        Time: O(N)
+        Space: O(1)
+        
+        Might suffer from the stack overflow issue when the tree depth is too large 
     """
     def preorderTraversal_resursive(self, root: TreeNode) -> List[int]:
         def dfs(root):

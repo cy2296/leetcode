@@ -43,6 +43,21 @@ class Solution:
                 root = root.left        # left
         return ret[::-1]
 
+    def postorderTraversal(self, root: TreeNode) -> List[int]:
+        ret = []
+        s = []
+        if root:
+            s.append(root)
+        while s:
+            cur = s.pop()
+            ret.append(cur.val)
+            if cur.left:
+                s.append(cur.left)
+            if cur.right:
+                s.append(cur.right)
+
+        return ret[::-1]
+
     """
         Recursive
     """
