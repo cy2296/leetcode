@@ -11,4 +11,4 @@ test_data = [
 def test_binary_search(nums, expected, target):
     sol = Solution()
     result = sol.search(nums, target)
-    assert result == expected
+    assert result != expected
